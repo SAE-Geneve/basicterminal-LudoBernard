@@ -5,13 +5,13 @@
 
 bool playAgain = false;
 
-bool Jeu(){
+bool Jeu() {
 	//Initialisation des variables
 	bool trouvé = false;
 	srand((int)time(0));
 	int chiffre = ((rand() % 100) + 1);
 	int tentatives = 0;
-	
+
 	//On continue à jouer tant que le chiffre n'est pas trouvé
 	while (trouvé == false) {
 		std::cout << "Devinez le chiffre entre 1 et 100!\n";
@@ -27,7 +27,7 @@ bool Jeu(){
 			std::cout << "Trop petit!\n";
 			tentatives += 1;
 		}
-		else if (essai == chiffre){
+		else if (essai == chiffre) {
 			tentatives += 1;
 			std::cout << "Bravo vous gagnez avec " << tentatives << " tentatives!\n";
 			trouvé = true;
@@ -37,16 +37,17 @@ bool Jeu(){
 	return true;
 }
 
-int main(){
+int main() {
 	Jeu();
-	while(playAgain == true){
+	while (playAgain == true) {
 		std::cout << "Voulez-vous rejouer?(y/n)\n";
 		char answer = 'a';
 		std::cin >> answer;
-		if(answer == 'y'){
+		if (answer == 'y') {
 			playAgain = false;
 			Jeu();
-		} else if(answer == 'n') {
+		}
+		else if (answer == 'n') {
 			std::cout << "Au revoir!";
 			break;
 		}
